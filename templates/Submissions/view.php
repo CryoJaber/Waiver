@@ -13,22 +13,11 @@
 <li><?= $this->Html->link(__('New Submission'), ['action' => 'add'], ['class' => 'nav-link']) ?> </li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav flex-column">' . $this->fetch('tb_actions') . '</ul>'); ?>
-<script type="text/javascript">
-$(document).ready(function() {
-    var table = $('#submissions').DataTable( {
-        lengthChange: false,
-        ]
-    } );
- 
-    table.buttons().container()
-        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
-} );
-</script>
 
 <div class="submissions view large-9 medium-8 columns content">
     <h3><?= h($submission->Waiver_ID) ?></h3>
     <div class="table-responsive">
-        <table class="table table-striped" id="submissions">
+        <table class="table table-striped">
             <tr>
                 <th scope="row"><?= __('Customer First Name') ?></th>
                 <td><?= h($submission->customer_first_name) ?></td>

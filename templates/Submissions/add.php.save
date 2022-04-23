@@ -1,0 +1,354 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Submission $submission
+ */
+?>
+<?php $this->extend('/layout/TwitterBootstrap/dashboard'); ?>
+
+
+<img src="https://cloud.cryocenter.us/Cryo.png" style="width: text-align: center; width: 150px; height: auto;">
+
+<?php $this->start('tb_actions'); ?>
+
+
+<li><?= $this->Html->link(__('List Submissions'), ['action' => 'index'], ['class' => 'nav-link']) ?></li>
+<?php $this->end(); ?>
+<?php $this->assign('tb_sidebar', '<ul class="nav flex-column">' . $this->fetch('tb_actions') . '</ul>'); ?>
+
+<div class="submissions form content">
+    <?= $this->Form->create($submission) ?>
+    <fieldset>
+        
+	<h1 style="text-align: center;">
+		Customer Waiver
+	</h1>
+
+	<table style="width: 100%">
+	   <tbody>
+		<tr style="width: 100%">
+		       <td style="width: 50%">
+                       <?php echo $this->Form->control('customer_first_name', ['label' => 'First Name']); ?>
+		       </td>
+	
+		       <td style="width: 50%">
+  		       <?php echo $this->Form->control('customer_last_name', ['label' => 'Last Name']); ?>
+		       </td>
+		</tr>
+
+		<tr style="width: 100%">
+		        <td style="width: 50%">
+			<?php echo $this->Form->control('customer_email', ['label' => 'Email']); ?>
+			</td>
+		
+			<td>
+			<?php echo $this->Form->control('customer_phone', ['label' => 'Phone']); ?>
+			</td>
+		</tr>
+		
+		<tr style="width: 100%">
+			<td style="width: 100%">
+			<?php echo $this->Form->control('customer_mailing_address', ['label' => 'Mailing Address']); ?>
+			</td>
+		</tr>
+
+		<tr style="width: 100%">
+			<td style="50%">
+			<?php echo $this->Form->control('customer_city', ['label' => 'City']); ?>
+			</td>
+
+			<td style="25%">
+			<?php echo $this->Form->control('customer_state', ['label' => 'State']); ?>
+			</td>
+
+			<td style="25%">
+			<?php echo $this->Form->control('customer_zipcode', ['label' => 'Zipcode']); ?>
+			</td>
+		</tr>
+
+		<tr style="width: 100%">
+			<td style="50%">
+			<?php echo $this->Form->control('company_name', ['label' => 'Company Name']); ?>
+			</td>
+	
+			<td style="50%">
+			<?php echo $this->Form->control('company_role', ['label' => 'Role Within Company']); ?>
+			</td>
+		</tr>
+
+		<tr style="width: 100%">
+			<td style="50%">
+			<?php echo $this->Form->control('customer_birthday', ['label' => 'Birthday']); ?>
+			</td>
+
+			<td style="50%">
+			<?php echo $this->Form->control('customer_gender', ['label' => 'Gender']); ?>
+			</td>
+		</tr>
+
+
+		<tr style="width: 100%">
+			<td>
+			<h4 tyle="text-align: center;">
+			Emergency Contact
+			</h4>
+			</td>
+		</tr>
+
+		<tr style="width: 100%">
+			<td style="width: 50%">
+			<?php echo $this->Form->control('ec_first_name', ['label' => 'First Name']); ?>
+			</td>
+		
+			<td style="width: 50%">
+			<?php echo $this->Form->control('ec_last_name', ['label' => 'Last Name']); ?>
+			</td>
+		</tr>
+		
+		<tr style="width: 100%">
+			<td style="width: 50%">
+			<?php echo $this->Form->control('ec_phone', ['label' => 'Phone']); ?>
+			</td>
+			
+			<td style="width: 50%">
+			<?php echo $this->Form->control('ec_email', ['label' => 'Email']); ?>
+			</td>
+		</tr>
+	
+		<tr style="width: 100%">
+			<td style="width: 50%">
+			<?php echo $this->Form->control('ec_relationship', ['label' => 'Relationship']); ?>
+			</td>
+		</tr>
+
+
+
+		<tr style="100%">
+			<td style="100%">
+
+			<h4 style="text-align: center;">
+				Absolute Contraindications
+			</h4>
+		</tr>
+
+		<tr style="100%">
+			<td style="80%">
+			<h5 style="text-align: center;">
+				Question
+			</h5>
+			</td>
+
+			<td style="10%">
+				Yes
+			</td>
+		
+			<td style="10%">
+				No
+			</td>
+		</tr>
+
+		<tr style="100%">
+			<td style="80%">
+			Have you ever had a heart attack within the past 6 months?
+			</td>
+			
+			<td style="10%">
+			<?php echo $this->Form->radio('heart_attack', ['value' => 'Yes']); ?>
+			</td>
+
+			<td style="10%">
+			<?php echo $this->Form->radio('heart_attack', ['value' => 'No']); ?>
+            		</td>
+		</tr>
+
+ 		<tr style="100%">
+                        <td style="80%">
+                        Do you have a pacemaker?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('pacemaker', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('pacemaker', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+ 		<tr style="100%">
+                        <td style="80%">
+                        Have you had a heart bypass or valvular disease within the past 6 months?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_bypass', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_bypass', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+
+ 		<tr style="100%">
+                        <td style="80%">
+                        Do you have congestive heart failure?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_failure', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_failure', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+
+		<tr style="100%">
+                        <td style="80%">
+                        Do you have chronic obsructive pulmonary disease (COPD)?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('copd', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('copd', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+                <tr style="100%">
+                        <td style="80%">
+                        Do you have an intrathecal pain pump or any electro stimulation implant device (i.e. a spinal stimulator implant)?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('intrathecal_painpump', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('intrathecal_painpump', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+		 <tr style="100%">
+                        <td style="80%">
+                        Do you have any chronic acute kidney conditions?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('chronic_kidneys', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('chronic_kidneys', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+		 <tr style="100%">
+                        <td style="80%">
+                        Are you pregnant?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('pregnant', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('pregnant', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+
+
+		<tr style="100%">
+			<td style="100%">
+			<h5>
+			Relative Contraindications
+			</h5>
+			</td>
+		</tr>
+	
+
+		<tr style="100%">
+                        <td style="80%">
+                        Have you had a heart attack within the past 6 months?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_attack', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_attack', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+
+		 <tr style="100%">
+                        <td style="80%">
+                        Have you ever had a heart attack within the past 6 months?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_attack', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_attack', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+
+		 <tr style="100%">
+                        <td style="80%">
+                        Have you ever had a heart attack within the past 6 months?
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_attack', ['value' => 'Yes']); ?>
+                        </td>
+
+                        <td style="10%">
+                        <?php echo $this->Form->radio('heart_attack', ['value' => 'No']); ?>
+                        </td>
+                </tr>
+
+		echo $this->Form->control('copd');
+            echo $this->Form->control('heart_attack');
+            echo $this->Form->control('heart_bypass');
+            echo $this->Form->control('heart_failure');
+            echo $this->Form->control('interthecal_painpump');
+            echo $this->Form->control('pacemaker');
+            echo $this->Form->control('pregnant');
+ 	?>
+
+	<h3 style="text-align: center;">
+		Relative Contraindications
+	</h3>
+
+	<?php
+
+            echo $this->Form->control('blood_disorders');
+            echo $this->Form->control('circulatory_dysfunction');
+            echo $this->Form->control('heart_arythmia');
+            echo $this->Form->control('open_wounds');
+
+	?>
+
+	<h3 style="text-align: center;">
+		Other Risk Factors
+	</h3>
+
+	<?php
+
+            echo $this->Form->control('siezures');
+            echo $this->Form->control('skin_reactions');
+            echo $this->Form->control('under_influence');
+        ?>
+    </fieldset>
+    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+</div>
