@@ -19,12 +19,12 @@
     <div class="table-responsive">
         <table class="table table-striped">
             <tr>
-                <th scope="row"><?= __('Customer First Name') ?></th>
-                <td><?= h($submission->customer_first_name) ?></td>
+                <th scope="row"><?= __('Customer Firstname') ?></th>
+                <td><?= h($submission->customer_firstname) ?></td>
             </tr>
             <tr>
-                <th scope="row"><?= __('Customer Last Name') ?></th>
-                <td><?= h($submission->customer_last_name) ?></td>
+                <th scope="row"><?= __('Customer Lastname') ?></th>
+                <td><?= h($submission->customer_lastname) ?></td>
             </tr>
             <tr>
                 <th scope="row"><?= __('Customer Email') ?></th>
@@ -39,6 +39,10 @@
                 <td><?= h($submission->customer_mailing_address) ?></td>
             </tr>
             <tr>
+                <th scope="row"><?= __('Customer Mailing Address 2') ?></th>
+                <td><?= h($submission->customer_mailing_address_2) ?></td>
+            </tr>
+            <tr>
                 <th scope="row"><?= __('Customer City') ?></th>
                 <td><?= h($submission->customer_city) ?></td>
             </tr>
@@ -47,12 +51,20 @@
                 <td><?= h($submission->customer_state) ?></td>
             </tr>
             <tr>
+                <th scope="row"><?= __('Customer Zipcode') ?></th>
+                <td><?= h($submission->customer_zipcode) ?></td>
+            </tr>
+            <tr>
                 <th scope="row"><?= __('Company Name') ?></th>
                 <td><?= h($submission->company_name) ?></td>
             </tr>
             <tr>
                 <th scope="row"><?= __('Company Role') ?></th>
                 <td><?= h($submission->company_role) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Customer Birthday') ?></th>
+                <td><?= h($submission->customer_birthday) ?></td>
             </tr>
             <tr>
                 <th scope="row"><?= __('Customer Gender') ?></th>
@@ -67,10 +79,6 @@
                 <td><?= h($submission->ec_last_name) ?></td>
             </tr>
             <tr>
-                <th scope="row"><?= __('Ec Phone') ?></th>
-                <td><?= h($submission->ec_phone) ?></td>
-            </tr>
-            <tr>
                 <th scope="row"><?= __('Ec Email') ?></th>
                 <td><?= h($submission->ec_email) ?></td>
             </tr>
@@ -79,16 +87,20 @@
                 <td><?= h($submission->ec_relationship) ?></td>
             </tr>
             <tr>
-                <th scope="row"><?= __('Waiver ID') ?></th>
-                <td><?= $this->Number->format($submission->Waiver_ID) ?></td>
+                <th scope="row"><?= __('Ec Phone') ?></th>
+                <td><?= h($submission->ec_phone) ?></td>
             </tr>
             <tr>
-                <th scope="row"><?= __('Customer Zipcode') ?></th>
-                <td><?= $this->Number->format($submission->customer_zipcode) ?></td>
+                <th scope="row"><?= __('Id') ?></th>
+                <td><?= $this->Number->format($submission->id) ?></td>
             </tr>
             <tr>
-                <th scope="row"><?= __('Customer Birthday') ?></th>
-                <td><?= h($submission->customer_birthday) ?></td>
+                <th scope="row"><?= __('Created At') ?></th>
+                <td><?= h($submission->created_at) ?></td>
+            </tr>
+            <tr>
+                <th scope="row"><?= __('Updated At') ?></th>
+                <td><?= h($submission->updated_at) ?></td>
             </tr>
             <tr>
                 <th scope="row"><?= __('Chronic Kidneys') ?></th>

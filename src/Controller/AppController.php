@@ -18,6 +18,9 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use DataTables\Controller\Component\DataTablesComponent;
+use Cake\Datasource\ConnectionManager;
+use Cake\Database\Driver\Mysql;
+
 /**
  * Application Controller
  *

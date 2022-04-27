@@ -8,24 +8,27 @@ use Cake\ORM\Entity;
 /**
  * Submission Entity
  *
- * @property int $Waiver_ID
- * @property string $customer_first_name
- * @property string $customer_last_name
+ * @property int $id
+ * @property \Cake\I18n\FrozenTime|null $created_at
+ * @property \Cake\I18n\FrozenTime|null $updated_at
+ * @property string $customer_firstname
+ * @property string $customer_lastname
  * @property string $customer_email
  * @property string $customer_phone
  * @property string $customer_mailing_address
+ * @property string $customer_mailing_address_2
  * @property string $customer_city
  * @property string $customer_state
- * @property int $customer_zipcode
+ * @property string $customer_zipcode
  * @property string $company_name
  * @property string $company_role
- * @property \Cake\I18n\FrozenTime $customer_birthday
+ * @property string $customer_birthday
  * @property string $customer_gender
  * @property string $ec_first_name
  * @property string $ec_last_name
- * @property string $ec_phone
  * @property string $ec_email
  * @property string $ec_relationship
+ * @property string $ec_phone
  * @property bool $chronic_kidneys
  * @property bool $copd
  * @property bool $heart_attack
@@ -54,11 +57,14 @@ class Submission extends Entity
      * @var array<string, bool>
      */
     protected $_accessible = [
-        'customer_first_name' => true,
-        'customer_last_name' => true,
+        'created_at' => true,
+        'updated_at' => true,
+        'customer_firstname' => true,
+        'customer_lastname' => true,
         'customer_email' => true,
         'customer_phone' => true,
         'customer_mailing_address' => true,
+        'customer_mailing_address_2' => true,
         'customer_city' => true,
         'customer_state' => true,
         'customer_zipcode' => true,
@@ -68,9 +74,9 @@ class Submission extends Entity
         'customer_gender' => true,
         'ec_first_name' => true,
         'ec_last_name' => true,
-        'ec_phone' => true,
         'ec_email' => true,
         'ec_relationship' => true,
+        'ec_phone' => true,
         'chronic_kidneys' => true,
         'copd' => true,
         'heart_attack' => true,

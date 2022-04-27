@@ -7,7 +7,6 @@
 <?php $this->extend('/layout/TwitterBootstrap/dashboard'); ?>
 
 <?php $this->start('tb_actions'); ?>
-<li><?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $submission->Waiver_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $submission->Waiver_ID), 'class' => 'nav-link']) ?></li>
 <li><?= $this->Html->link(__('List Submissions'), ['action' => 'index'], ['class' => 'nav-link']) ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav flex-column">' . $this->fetch('tb_actions') . '</ul>'); ?>
@@ -15,7 +14,7 @@
 <div class="submissions form content">
     <?= $this->Form->create($submission) ?>
     <fieldset>
-        <legend><?= __('Edit Submission') ?></legend>
+        <legend><?= __('Add Submission') ?></legend>
         <?php
             echo $this->Form->control('id');
             echo $this->Form->control('created_at');
@@ -54,6 +53,30 @@
             echo $this->Form->control('skin_reactions');
             echo $this->Form->control('under_influence');
         ?>
+
+	        <div class="col-md-12">
+            <label class="" for="">Signature:</label>
+            <br/>
+            <div id="sig" ></div>
+            <br/>
+            <button id="clear">Clear Signature</button>
+            <textarea id="signature64" name="signed" style="display: none"></textarea>
+        </div>
+  
+        <br/>
+        <button class="btn btn-success">Submit</button>
+    </form>
+  
+</div>
+  
+<script type="text/javascript">
+    var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
+    $('#clear').click(function(e) {
+        e.preventDefault();
+        sig.signature('clear');
+        $("#signature64").val('');
+    });
+</script>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

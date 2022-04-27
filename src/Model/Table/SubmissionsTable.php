@@ -51,104 +51,120 @@ class SubmissionsTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->scalar('customer_first_name')
-            ->maxLength('customer_first_name', 100)
-            ->requirePresence('customer_first_name', 'create')
-            ->notEmptyString('customer_first_name');
+            ->dateTime('created_at')
+            ->allowEmptyDateTime('created_at');
 
         $validator
-            ->scalar('customer_last_name')
-            ->maxLength('customer_last_name', 100)
-            ->requirePresence('customer_last_name', 'create')
-            ->notEmptyString('customer_last_name');
+            ->dateTime('updated_at')
+            ->allowEmptyDateTime('updated_at');
+
+        $validator
+            ->scalar('customer_firstname')
+            ->maxLength('customer_firstname', 255)
+            ->requirePresence('customer_firstname', 'create')
+            ->notEmptyString('customer_firstname');
+
+        $validator
+            ->scalar('customer_lastname')
+            ->maxLength('customer_lastname', 255)
+            ->requirePresence('customer_lastname', 'create')
+            ->notEmptyString('customer_lastname');
 
         $validator
             ->scalar('customer_email')
-            ->maxLength('customer_email', 100)
+            ->maxLength('customer_email', 255)
             ->requirePresence('customer_email', 'create')
             ->notEmptyString('customer_email');
 
         $validator
             ->scalar('customer_phone')
-            ->maxLength('customer_phone', 15)
+            ->maxLength('customer_phone', 255)
             ->requirePresence('customer_phone', 'create')
             ->notEmptyString('customer_phone');
 
         $validator
             ->scalar('customer_mailing_address')
-            ->maxLength('customer_mailing_address', 200)
+            ->maxLength('customer_mailing_address', 255)
             ->requirePresence('customer_mailing_address', 'create')
             ->notEmptyString('customer_mailing_address');
 
         $validator
+            ->scalar('customer_mailing_address_2')
+            ->maxLength('customer_mailing_address_2', 50)
+            ->requirePresence('customer_mailing_address_2', 'create')
+            ->notEmptyString('customer_mailing_address_2');
+
+        $validator
             ->scalar('customer_city')
-            ->maxLength('customer_city', 100)
+            ->maxLength('customer_city', 255)
             ->requirePresence('customer_city', 'create')
             ->notEmptyString('customer_city');
 
         $validator
             ->scalar('customer_state')
-            ->maxLength('customer_state', 50)
+            ->maxLength('customer_state', 255)
             ->requirePresence('customer_state', 'create')
             ->notEmptyString('customer_state');
 
         $validator
-            ->integer('customer_zipcode')
+            ->scalar('customer_zipcode')
+            ->maxLength('customer_zipcode', 255)
             ->requirePresence('customer_zipcode', 'create')
             ->notEmptyString('customer_zipcode');
 
         $validator
             ->scalar('company_name')
-            ->maxLength('company_name', 200)
+            ->maxLength('company_name', 255)
             ->requirePresence('company_name', 'create')
             ->notEmptyString('company_name');
 
         $validator
             ->scalar('company_role')
-            ->maxLength('company_role', 200)
+            ->maxLength('company_role', 255)
             ->requirePresence('company_role', 'create')
             ->notEmptyString('company_role');
 
         $validator
-            ->dateTime('customer_birthday')
+            ->scalar('customer_birthday')
+            ->maxLength('customer_birthday', 255)
             ->requirePresence('customer_birthday', 'create')
-            ->notEmptyDateTime('customer_birthday');
+            ->notEmptyString('customer_birthday');
 
         $validator
             ->scalar('customer_gender')
-            ->maxLength('customer_gender', 15)
+            ->maxLength('customer_gender', 255)
             ->requirePresence('customer_gender', 'create')
             ->notEmptyString('customer_gender');
 
         $validator
             ->scalar('ec_first_name')
-            ->maxLength('ec_first_name', 100)
+            ->maxLength('ec_first_name', 255)
             ->requirePresence('ec_first_name', 'create')
             ->notEmptyString('ec_first_name');
 
         $validator
             ->scalar('ec_last_name')
-            ->maxLength('ec_last_name', 100)
+            ->maxLength('ec_last_name', 255)
             ->requirePresence('ec_last_name', 'create')
             ->notEmptyString('ec_last_name');
 
         $validator
-            ->scalar('ec_phone')
-            ->maxLength('ec_phone', 15)
-            ->requirePresence('ec_phone', 'create')
-            ->notEmptyString('ec_phone');
-
-        $validator
             ->scalar('ec_email')
-            ->maxLength('ec_email', 100)
+            ->maxLength('ec_email', 255)
             ->requirePresence('ec_email', 'create')
             ->notEmptyString('ec_email');
 
         $validator
             ->scalar('ec_relationship')
-            ->maxLength('ec_relationship', 100)
+            ->maxLength('ec_relationship', 255)
             ->requirePresence('ec_relationship', 'create')
             ->notEmptyString('ec_relationship');
+
+        $validator
+            ->scalar('ec_phone')
+            ->maxLength('ec_phone', 255)
+            ->requirePresence('ec_phone', 'create')
+            ->notEmptyString('ec_phone');
 
         $validator
             ->boolean('chronic_kidneys')

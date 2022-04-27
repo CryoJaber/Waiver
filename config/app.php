@@ -6,6 +6,7 @@ use Cake\Database\Driver\Mysql;
 use Cake\Error\ExceptionRenderer;
 use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
+use Cake\Datasource\ConnectionManager;
 
 return [
     /*
@@ -294,7 +295,7 @@ return [
             'driver' => Mysql::class,
             'persistent' => false,
             'timezone' => 'UTC',
-
+	    'database' => 'Waivers',
             /*
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6
              */
@@ -327,6 +328,10 @@ return [
              * which is the recommended value in production environments
              */
             'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+	    'username' => 'cryo_admin',
+	    'password' => '75EZnesty3!',
+	    'host' => 'dbase.cryocenter.us',
+
         ],
 
         /*
@@ -343,6 +348,11 @@ return [
             'quoteIdentifiers' => false,
             'log' => false,
             'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+	    'database' => 'Waivers',
+            'username' => 'cryo_admin',
+	    'password' => '75EZnesty3!',
+	    'host' => 'dbase.cryocenter.us',
+
         ],
     ],
 

@@ -67,6 +67,7 @@ class Application extends BaseApplication
         $this->addPlugin('BootstrapUI');
         $this->addPlugin('DataTables');
         $this->addPlugin('DataTables');
+        $this->addPlugin('BootstrapUI');
     }
 
     /**
